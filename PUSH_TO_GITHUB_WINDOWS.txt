@@ -1,0 +1,19 @@
+MORPHLY VC — How to publish this fresh repo from Windows
+
+1) Visit https://github.com/new?name=morphly-vc
+2) Name: morphly-vc. Create EMPTY repository (do NOT check README/.gitignore/license).
+3) Unzip morphly-vc-alpha-source.zip. Open PowerShell inside the morphly-vc folder.
+4) Run:
+
+git init
+git branch -M main
+git add .
+git commit -m "Initial Morphly VC rootless alpha prototype"
+git remote add origin https://github.com/samuellucky2424-afk/morphly-vc.git
+git push -u origin main
+
+5) On GitHub, open Actions > Android debug APK > latest run.
+6) Download the `morphly-vc-debug-apk` build artifact, unzip it and install app-debug.apk.
+7) Before installation, verify the Actions run says Build debug succeeded.
+
+The current ChatGPT GitHub connector can edit an existing repository, but has no create-repository action. This source ZIP was prepared separately and no GitHub repository was created yet.

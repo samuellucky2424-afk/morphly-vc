@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical" android:background="@color/background">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="58dp"
+        android:paddingHorizontal="18dp" android:orientation="horizontal" android:gravity="center_vertical"
+        android:background="@color/brand">
+        <ImageView android:layout_width="34dp" android:layout_height="34dp"
+            android:src="@drawable/ic_morphly_mark" android:contentDescription="Morphly"/>
+        <LinearLayout android:layout_width="0dp" android:layout_weight="1"
+            android:layout_height="wrap_content" android:orientation="vertical" android:paddingStart="8dp">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="MORPHLY" android:textColor="@color/white" android:textStyle="bold" android:textSize="20sp"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="VC · Rootless camera lab" android:textColor="#FFF2EC" android:textSize="11sp"/>
+        </LinearLayout>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="ALPHA 0.1" android:textSize="11sp" android:textStyle="bold" android:textColor="@color/white"/>
+    </LinearLayout>
+    <ScrollView android:layout_width="match_parent" android:layout_height="match_parent"
+        android:fillViewport="true" android:clipToPadding="false">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:padding="16dp" android:orientation="vertical">
+            <FrameLayout android:layout_width="match_parent" android:layout_height="245dp"
+                android:background="@drawable/panel_dark">
+                <VideoView android:id="@+id/videoPreview" android:layout_width="match_parent"
+                    android:layout_height="match_parent" android:layout_gravity="center" />
+                <LinearLayout android:id="@+id/previewEmpty" android:layout_width="match_parent"
+                    android:layout_height="match_parent" android:orientation="vertical" android:gravity="center">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="▶" android:textColor="@color/white" android:textSize="36sp"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Ready for your video" android:textColor="@color/white" android:textSize="14sp"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Choose a video below to preview" android:textColor="#D5CBD2" android:textSize="12sp"/>
+                </LinearLayout>
+                <TextView android:id="@+id/liveBadge" android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:layout_gravity="top|start"
+                    android:layout_margin="12dp" android:padding="7dp"
+                    android:text="● LOCAL PREVIEW" android:textSize="10sp" android:textColor="@color/white"
+                    android:background="@color/brand"/>
+            </FrameLayout>
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginTop="16dp" android:text="SOURCE" android:textSize="12sp"
+                android:letterSpacing="0.12" android:textStyle="bold" android:textColor="@color/muted"/>
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginTop="8dp" android:orientation="horizontal">
+                <Button android:id="@+id/buttonUploadVideo" style="@style/MorphlyAction"
+                    android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content"
+                    android:text="↑ Upload video" />
+                <Button android:id="@+id/buttonUploadFace" style="@style/MorphlyAction"
+                    android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp" android:text="↑ Face image" />
+            </LinearLayout>
+            <TextView android:id="@+id/selectedVideoText" android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:text="No video selected" android:textSize="12sp"
+                android:textColor="@color/muted" android:ellipsize="middle" android:singleLine="true"/>
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginTop="10dp" android:padding="12dp" android:background="@drawable/panel_white"
+                android:gravity="center_vertical" android:orientation="horizontal">
+                <ImageView android:id="@+id/facePreview" android:layout_width="44dp" android:layout_height="44dp"
+                    android:scaleType="centerCrop" android:src="@drawable/ic_morphly_mark"
+                    android:contentDescription="Selected face image" />
+                <TextView android:id="@+id/faceStatus" android:layout_width="0dp" android:layout_weight="1"
+                    android:layout_height="wrap_content" android:paddingStart="12dp"
+                    android:text="Face swap reference: not selected" android:textColor="@color/ink"
+                    android:textSize="12sp" />
+            </LinearLayout>
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginTop="16dp" android:text="ENGINE" android:textSize="12sp"
+                android:letterSpacing="0.12" android:textStyle="bold" android:textColor="@color/muted"/>
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:layout_marginTop="8dp">
+                <Button android:id="@+id/buttonXmax" android:layout_width="0dp" android:layout_weight="1"
+                    android:layout_height="wrap_content" android:text="XMax · Plus" android:textAllCaps="false" />
+                <Button android:id="@+id/buttonVidu" android:layout_width="0dp" android:layout_weight="1"
+                    android:layout_height="wrap_content" android:layout_marginStart="8dp"
+                    android:text="Vidu · Pro" android:textAllCaps="false" />
+            </LinearLayout>
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginTop="10dp" android:text="Output quality" android:textColor="@color/muted" android:textSize="12sp"/>
+            <Spinner android:id="@+id/spinnerQuality" android:layout_width="match_parent"
+                android:layout_height="48dp" android:background="@drawable/panel_white"/>
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:layout_marginTop="14dp">
+                <Button android:id="@+id/buttonMiniWindow" style="@style/MorphlyAction"
+                    android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content"
+                    android:text="▣ Pop-out window"/>
+                <Button android:id="@+id/buttonConnect" style="@style/MorphlyAction"
+                    android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp" android:text="▶ Connect"/>
+            </LinearLayout>
+            <TextView android:id="@+id/statusText" android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:padding="12dp" android:layout_marginTop="14dp"
+                android:background="@drawable/panel_white" android:textSize="12sp"
+                android:textColor="@color/ink" android:text="Status: Select a source to begin."/>
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginTop="12dp" android:gravity="center_vertical" android:orientation="horizontal">
+                <TextView android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content"
+                    android:text="CREDITS: — (not connected)" android:textColor="@color/brand" android:textStyle="bold"/>
+                <Button android:id="@+id/buttonDiagnostics" android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:text="Camera test" android:textAllCaps="false"/>
+            </LinearLayout>
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginTop="10dp" android:layout_marginBottom="24dp"
+                android:text="Rootless test: local preview and overlay only. Third-party camera interception is NOT implemented or verified."
+                android:textColor="@color/muted" android:textSize="11sp"/>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

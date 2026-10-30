@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <color name="brand">#E43C31</color>
+  <color name="brand_dark">#C62C26</color>
+  <color name="background">#F8F6F5</color>
+  <color name="ink">#251F22</color>
+  <color name="muted">#786F72</color>
+  <color name="outline">#E7E0DF</color>
+  <color name="white">#FFFFFFFF</color>
+</resources>

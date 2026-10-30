@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 3.22.1)
+project(morphlyframe LANGUAGES CXX)
+add_library(morphlyframe SHARED frame_probe.cpp)
+find_library(log-lib log)
+target_compile_features(morphlyframe PRIVATE cxx_std_17)
+target_link_libraries(morphlyframe ${log-lib})

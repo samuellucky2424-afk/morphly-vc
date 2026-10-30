@@ -80,8 +80,8 @@ class MainActivity : ComponentActivity() {
     }
 
     private fun refreshEngineButtons() {
-        ui.buttonXmax.setBackgroundColor(getColor(if (engine == Engine.XMAX) R.color.brand else R.color.outline))
-        ui.buttonVidu.setBackgroundColor(getColor(if (engine == Engine.VIDU) R.color.brand else R.color.outline))
+        ui.buttonXmax.backgroundTintList = android.content.res.ColorStateList.valueOf(getColor(if (engine == Engine.XMAX) R.color.brand else R.color.outline))
+        ui.buttonVidu.backgroundTintList = android.content.res.ColorStateList.valueOf(getColor(if (engine == Engine.VIDU) R.color.brand else R.color.outline))
         ui.buttonXmax.setTextColor(getColor(if (engine == Engine.XMAX) R.color.white else R.color.ink))
         ui.buttonVidu.setTextColor(getColor(if (engine == Engine.VIDU) R.color.white else R.color.ink))
         ui.statusText.text = "Selected ${engine.label}. Local-video preview is available; live provider SDK not connected."
